@@ -13,11 +13,14 @@ import { ListComponent } from './contract/list/list.component';
 import { ViewComponent } from './contract/view/view.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { HeaderComponent } from './shared/header/header.component';
+import { MessageComponent } from './shared/message/message.component';
 
 const appRoutes: Routes = [
   //{ path: 'crisis-center', component: CrisisListComponent },
   { path: 'list',      component: ListComponent },
   { path: 'view/:id',      component: ViewComponent },
+  { path: 'view/:id/:r',      component: ViewComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -36,6 +39,8 @@ const appRoutes: Routes = [
     EditComponent,
     ListComponent,
     ViewComponent,
+    HeaderComponent,
+    MessageComponent,
 
   ],
   imports: [
@@ -46,7 +51,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
 
   ],
